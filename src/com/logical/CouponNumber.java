@@ -1,30 +1,23 @@
 package com.logical;
 
 
-import java.util.Scanner;
-
 public class CouponNumber {
     public static void main(String[] args) {
-        /*
-         * char array to get characters for coupen
-         */
+
+        //char array to get characters for coupon
         char[] chars = "abcdefghijklmnop135654535".toCharArray();
-        /*
-         * length of coupen
-         */
+
+         //length of coupen
         int max = 100000000;
-        /*
-         * random value
-         */
-        double d = Math.random();
-        int random = (int) (d * max);
-        String sb = "";
-        System.out.println("random double " + d + " random at start " + random);
+
+         //random value
+        int random = (int)(Math.random()*max);
+        StringBuffer sb = new StringBuffer();
 
         while (random > 0) {
-            sb = sb + (chars[random % chars.length]);
+            sb.append(chars[random % chars.length]);
             random /= chars.length;
-            System.out.println(random + "  " + random % chars.length + " sb is " + sb);
+
         }
 
         String couponCode = sb.toString();
